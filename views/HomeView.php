@@ -17,7 +17,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
 	<h1>Hi, <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Anonymous User'; ?></h1>
 
 	<a href="../controllers/LogoutController.php">Logout</a>
-
+		<!-- chaity -->
 </body>
 </html>
 
