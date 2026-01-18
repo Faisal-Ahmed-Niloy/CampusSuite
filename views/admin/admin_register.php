@@ -21,7 +21,7 @@ session_start();
             <br>
 
             <label for="admin_email">Email:</label><br>
-            <input type="email" id="admin_email" placeholder="Enter a valid Email" required><br>
+            <input type="email" id="admin_email" placeholder=" enter a valid Email" required><br>
             <br>
 
             <label for="admin_phone">Phone Number:</label><br>
