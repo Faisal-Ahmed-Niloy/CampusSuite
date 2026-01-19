@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    background: #f0f2f5;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+}
+
+
+h2, h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #141a34;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border: 2px solid #2d8cf0;
+}
+
+
+input[type="submit"],
+button {
+    width: 100%;
+    padding: 12px;
+    background: #141a34;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background: #2d8cf0;
+}
+
+
+label {
+    font-weight: 500;
+    color: #141a34;
+}
+
+.input-group,
+.form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+span.submit-error {
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    font-size: 14px;
+    color: red;
+}
+
+input.valid,
+textarea.valid {
+    border: 2px solid seagreen;
+}
+
+input.error,
+textarea.error {
+    border: 2px solid #e74c3c;
+}
+
+
+p.success-message {
+    color: seagreen;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+a.back-dashboard,
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #2d8cf0;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a.back-dashboard:hover,
+a:hover {
+    text-decoration: underline;
+}
+
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+hr {
+    margin: 25px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}

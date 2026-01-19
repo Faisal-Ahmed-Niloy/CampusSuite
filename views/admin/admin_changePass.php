@@ -1,31 +1,33 @@
 <!DOCTYPE HTML>
 <html>
+<head>
+    <title>Change Password</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
 <body>
+<div class="container">
+    <form method="post" onsubmit="return validateChangePassword()">
+        <h2>Change Password</h2>
 
-<?php
-$msg = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if ($_POST["old"] == "1234") {
-        $msg = "Password Changed Successfully (Demo)";
-    } else {
-        $msg = "Old Password Incorrect";
-    }
-}
-?>
+        <div class="input-group">
+            <label>Old Password</label><br>
+            <input type="password" id="old-password" name="old_password" placeholder="Enter Old Password" required><br>
+        </div>
 
-<h2>Change Password</h2>
+        <div class="input-group">
+            <label>New Password</label><br>
+            <input type="password" id="new-password" name="new_password" placeholder="Enter New Password" required><br>
+        </div>
 
-<form method="post">
-Old Password: <input type="password" name="old"><br><br>
-New Password: <input type="password" name="new"><br><br>
-<input type="submit" value="Change">
-</form>
+        <div class="input-group">
+            <label>Confirm Password</label><br>
+            <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm New Password" required><br>
+            <span id="change-pass-error" class="submit-error"></span>
+        </div>
 
-<p><?php echo $msg; ?></p>
-
-<a href="dashboard.php">Back</a>
-
+        <input type="submit" value="Change Password">
+    </form>
+</div>
+<script src="admin.js"></script>
 </body>
 </html>
-
-

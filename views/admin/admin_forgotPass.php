@@ -1,23 +1,26 @@
 <!DOCTYPE HTML>
 <html>
+<head>
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
 <body>
+<div class="container">
+    <form method="post" onsubmit="return validateForgotPassword()">
+        <h2>Forgot Password</h2>
 
-<h2>Forgot Password</h2>
-
-<form method="post">
-Email: <input type="text" name="email"><br><br>
-<input type="submit" value="Reset Password">
-</form>
-
-<?php
-if (!empty($_POST["email"])) {
-    echo "Reset link sent to email (Demo)";
-}
-?>
-
-<a href="admin_login.php">Back to Login</a>
-
+        <div class="input-group">
+            <label>Email</label><br>
+            <input type="email" id="forgot-email" name="email" placeholder="Enter Email" required><br>
+            <span id="forgot-error" class="submit-error"></span>
+         </div>
+        <input type="submit" value="Send Reset Link"><br>
+        <a href="admin_login.php">Back to Login</a><br>
+    </form>
+</div>
+<script src="admin.js"></script>
 </body>
 </html>
+
 
 

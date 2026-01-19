@@ -1,35 +1,30 @@
 <!DOCTYPE HTML>
 <html>
+<head>
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
 <body>
-<?php
-session_start();
-$error = "";
+<div class="container">
+    <form method="post" onsubmit="return validateAdminLogin()">
+        <h2>Admin Login</h2>
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if ($_POST["username"] == "admin" && $_POST["password"] == "1234") {
-        $_SESSION["admin"] = "admin";
-        header("Location: admin_dashboard.php");
-    } else {
-        $error = "Invalid Username or Password";
-    }
-}
-?>
+        <div class="input-group">
+            <label>Username</label><br>
+            <input type="text" id="admin-username" name="username" placeholder="Enter Username" required><br>
+            <span id="login-error" class="submit-error"></span><br>
+        </div>
 
-<h2>Admin Login</h2>
+        <div class="input-group">
+            <label>Password</label><br>
+            <input type="password" id="admin-password" name="password" placeholder="Enter Password" required><br>
+            <br>
+        </div>
 
-<form method="post">
-Username: <input type="text" name="username"><br><br>
-Password: <input type="password" name="password"><br><br>
-<input type="submit" value="Login">
-</form>
-
-<p style="color:red;"><?php echo $error; ?></p>
-
-<a href="admin_forgotPass.php">Forgot Password?</a>
-</form>
-
-
+        <input type="submit" value="Login"><br>
+        <a href="admin_forgotpass.php">Forgot Password?</a><br>
+    </form>
+</div>
+<script src="admin.js"></script>
 </body>
 </html>
-
-

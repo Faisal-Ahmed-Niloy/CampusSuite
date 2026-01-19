@@ -1,32 +1,140 @@
-<!DOCTYPE HTML>
-<html>
-<body>
-<h2>Assign Teacher</h2>
-
-<form method="post">
-Teacher Name: <input type="text" name="teacher"><br><br>
-Course Name: <input type="text" name="course"><br><br>
-<input type="submit" value="Assign">
 <?php
+session_start();
+
 $teacher = $course = "";
+$message = "";
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $teacher = $_POST["Teacher"];
-  $course = $_POST["Course"];
+    $teacher = $_POST["teacher"] ?? '';
+    $course = $_POST["course"] ?? '';
+
+    if(!empty($teacher) && !empty($course)){
+        $message = "Teacher <strong>" . htmlspecialchars($teacher) . "</strong> assigned to <strong>" . htmlspecialchars($course) . "</strong>.";
+    }
 }
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assign Teacher</title>
+    <link rel="stylesheet" href="admin.css">
+    <style>
+        .container form {
+            max-width: 500px;
+            padding: 40px 30px;
+        }
 
-</form>
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #999;
+            border-radius: 4px;
+            font-size: 16px;
+        }
 
-<?php
-if (!empty($_POST["teacher"]) && !empty($_POST["course"])) {
-    echo "Teacher " . $_POST["teacher"] . " assigned to " . $_POST["course"];
+        input[type="submit"] {
+            background: #141a34;
+            color: #fff;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        input[type="submit"]:hover {
+            background: #2d8cf0;
+        }
+
+        p.success-message {
+            color: seagreen;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        a.back-dashboard {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #2d8cf0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a.back-dashboard:hover {
+            text-decoration: underline;
+        }
+
+        span.submit-error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form method="post" onsubmit="return validateAssignTeacher()">
+        <h2 style="text-align:center; margin-bottom:25px;">Assign Teacher</h2>
+
+        <div class="input-group">
+            <label for="teacher">Teacher Name</label>
+            <input type="text" id="teacher" name="teacher" placeholder="Enter Teacher Name">
+            <span id="teacher-error" class="submit-error"></span>
+        </div>
+
+        <div class="input-group">
+            <label for="course">Course Name</label>
+            <input type="text" id="course" name="course" placeholder="Enter Course Name">
+            <span id="course-error" class="submit-error"></span>
+        </div>
+
+        <input type="submit" value="Assign">
+
+        <?php if ($message): ?>
+            <p class="success-message"><?php echo $message; ?></p>
+        <?php endif; ?>
+
+        <a class="back-dashboard" href="dashboard.php">← Back to Dashboard</a>
+    </form>
+</div>
+
+<script src="admin.js"></script>
+<script>
+function validateAssignTeacher() {
+    let teacher = document.getElementById('teacher');
+    let course = document.getElementById('course');
+    let valid = true;
+
+    if(teacher.value.trim() === "") {
+        document.getElementById('teacher-error').innerText = "Enter teacher name";
+        teacher.classList.add('error');
+        valid = false;
+    } else {
+        document.getElementById('teacher-error').innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+        teacher.classList.remove('error');
+        teacher.classList.add('valid');
+    }
+
+    if(course.value.trim() === "") {
+        document.getElementById('course-error').innerText = "Enter course name";
+        course.classList.add('error');
+        valid = false;
+    } else {
+        document.getElementById('course-error').innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+        course.classList.remove('error');
+        course.classList.add('valid');
+    }
+
+    return valid;
 }
-?>
-
-<br><br>
-<a href="dashboard.php">Back</a>
+</script>
 
 </body>
 </html>
