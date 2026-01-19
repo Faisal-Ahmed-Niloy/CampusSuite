@@ -16,25 +16,25 @@ session_start();
         <h2>Student Registration</h2>
         <form action="" id="student_register">
 
-            <label for="name">Name:</label><br>
+            <label for="name">Name:</label>
             <input type="text" id="student_name" required><br>
-            <br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="student_email" placeholder="Enter a valid Email" required><br>
-            <br>
-            <label for="phone">Phone Number:</label><br>
-            <input type="number" id="student_phone" placeholder="atleast 11 digit" required><br><br>
-            <label for="dob">Date of Birth:</label><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="student_email" placeholder="Enter a valid Email" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="number" id="student_phone" placeholder="atleast 11 digit" required><br>
+            <label for="dob">Date of Birth:</label>
             <input type="date" id="dob_student" required><br><br>
             
-            <label for="gender">Select Gender:</label><br>
+            <label for="gender">Select Gender:</label>
             <input type="radio" name="gender" class="male" value="Male">Male  
             <input type="radio" name="gender" class="female" value="Female">Female
             <br><br>
             
-            <label for="password">Password:</label><br>
+            <label for="password">Password:</label>
             <input type="password" id="student_pass" placeholder="Enter a Password (minimum 8 character)"><br>
-            <br>
+            
             <input type="submit" value="Submit"> <br>
             <p>Already have an account? <a href="student_login.php">Login</a></p>
         </form>
