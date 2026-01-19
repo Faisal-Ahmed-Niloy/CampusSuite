@@ -21,6 +21,18 @@ session_start();
     <a href="views/student/student_forgotPass.php">Student Forgot Pass</a><br>
     <a href="views/student/student_changePass.php">Student Change Pass</a><br>
     <a href="views/student/dashboard.php">Student Dashboard</a><br>
+    <br>
+    <p><b>Admin Section</b></p>
+    <a href="views/admin/admin_login.php">Admin Login</a><br>
+    <a href="views/admin/admin_register.php">Admin Registration</a><br>
+    <a href="views/admin/admin_forgotPass.php">Admin Forgot Pass</a><br>
+    <a href="views/admin/admin_changePass.php">Admin Change Pass</a><br>
+    <a href="views/admin/dashboard.php">Admin Dashboard</a><br>
+    <a href="views/admin/admin_profileUpdate.php">Admin Profile Update</a><br>
+    <a href="views/admin/admin_logout.php">Admin Logout</a><br>
+    <a href="views/admin/users.php">Admin Users</a><br>
+    <a href="views/admin/courses.php">Admin Courses</a><br>
+    <a href="views/admin/assign_teacher.php">Assign Teacher</a><br>
+
 </body>
 </html>
->>>>>>> 6c29d7e12d50935c8ea06f555170b29a486c284b
