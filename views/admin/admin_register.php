@@ -16,17 +16,12 @@ session_start();
 
     <form action="" id="add_admin">
 
-<<<<<<< HEAD
         <label for="admin_name">Name:</label><br>
         <input type="text" id="admin_name" required>
         <br><br>
-=======
             <label for="admin_email">Email:</label><br>
             <input type="email" id="admin_email" placeholder=" enter a valid Email" required><br>
             <br>
->>>>>>> 6c29d7e12d50935c8ea06f555170b29a486c284b
-
-        <label for="admin_email">Email:</label><br>
         <input type="email" id="admin_email" placeholder="Enter a valid Email" required>
         <br><br>
 
