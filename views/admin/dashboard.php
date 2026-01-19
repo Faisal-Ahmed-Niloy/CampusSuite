@@ -101,8 +101,11 @@ if ($teacher != "" && $assign_course != "") {
 </html>
 
 
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> 6c29d7e12d50935c8ea06f555170b29a486c284b

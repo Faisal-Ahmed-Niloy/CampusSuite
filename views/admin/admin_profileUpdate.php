@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+<!DOCTYPE HTML>  
+<html>
+<head>
+<style>
+.error { color: #3300ff; }
+</style>
+</head>
+<body>  
+
+>>>>>>> 6c29d7e12d50935c8ea06f555170b29a486c284b
 <?php
 session_start();
 

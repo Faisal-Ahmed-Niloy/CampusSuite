@@ -18,9 +18,11 @@
             <input type="text" id="student_name" required>
             <br>
             <label for="password">Password:</label><br>
-            <input type="password" id="student_pass" required>
+            <input type="password" id="student_pass" required><br>
+            <input type="checkbox" name="remember_me" id="remember_me"> Remember Me</input>
             <br><br>
             <input type="submit" value= "Submit"><br>
+            <p>Forgot your pass? <a href="student_forgotPass.php">Click here</a></p>
             <p>Don't have an account? <a href="student_register.php">Register</a></p>
         </form>
         <p>Go <a href="../../index.php">back</a></p>
