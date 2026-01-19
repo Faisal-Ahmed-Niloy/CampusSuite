@@ -29,7 +29,3 @@ New Password: <input type="password" name="new"><br><br>
 </html>
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6c29d7e12d50935c8ea06f555170b29a486c284b

@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 <html>
 <body>
-<<<<<<< HEAD
-
 <?php
 session_start();
 $error = "";
@@ -28,16 +26,9 @@ Password: <input type="password" name="password"><br><br>
 <p style="color:red;"><?php echo $error; ?></p>
 
 <a href="admin_forgotPass.php">Forgot Password?</a>
-
-=======
-
-<form action="admin_reset_password.php" method="post">
-    Admin Email: <input type="text" name="email"><br><br>
-    New Password: <input type="password" name="new_password"><br><br>
-    <input type="submit" value="Reset Password">
 </form>
 
->>>>>>> 6c29d7e12d50935c8ea06f555170b29a486c284b
+
 </body>
 </html>
 

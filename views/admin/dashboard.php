@@ -3,19 +3,19 @@
 <body>
 
 <?php
-// Fixed values (demo purpose)
+
 $total_students = 120;
 $total_teachers = 30;
 $total_courses = 15;
 $total_departments = 5;
 
-// Form values
+
 $user = "";
 $course = "";
 $teacher = "";
 $assign_course = "";
 
-// Handle form submissions
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (!empty($_POST["user"])) {
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <h2>Admin Dashboard</h2>
 
-<!-- Dashboard Counts -->
+
 <p>Total Students: <?php echo $total_students; ?></p>
 <p>Total Teachers: <?php echo $total_teachers; ?></p>
 <p>Total Courses: <?php echo $total_courses; ?></p>
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <hr>
 
-<!-- Recent Activities -->
+
 <h3>Recent Activities</h3>
 <ul>
   <li>New user added</li>
@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <hr>
 
-<!-- Add User -->
+
 <h3>Add User</h3>
 <form method="post" action="">
   User Name: <input type="text" name="user">
@@ -68,7 +68,7 @@ if ($user != "") {
 
 <hr>
 
-<!-- Add Course -->
+
 <h3>Add Course</h3>
 <form method="post" action="">
   Course Name: <input type="text" name="course">
@@ -83,7 +83,7 @@ if ($course != "") {
 
 <hr>
 
-<!-- Assign Teacher -->
+
 <h3>Assign Teacher</h3>
 <form method="post" action="">
   Teacher Name: <input type="text" name="teacher"><br><br>
@@ -101,11 +101,4 @@ if ($teacher != "" && $assign_course != "") {
 </html>
 
 
-<<<<<<< HEAD
 
-
-
-
-
-=======
->>>>>>> 6c29d7e12d50935c8ea06f555170b29a486c284b
