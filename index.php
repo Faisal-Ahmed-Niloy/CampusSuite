@@ -14,7 +14,12 @@ session_start();
     <p>A comprehensive campus maintenance solution</p>
 
     <h3>Location Index: (testing)</h3>
+    <p>________________________________</p>
+    <p><b>Student Section</b></p>
     <a href="views/student/student_login.php">Student Login</a><br>
-    <a href="views/student/student_register.php">Student Registration</a>
+    <a href="views/student/student_register.php">Student Registration</a><br>
+    <a href="views/student/student_forgotPass.php">Student Forgot Pass</a><br>
+    <a href="views/student/student_changePass.php">Student Change Pass</a><br>
+    <a href="views/student/dashboard.php">Student Dashboard</a><br>
 </body>
 </html>
