@@ -2,26 +2,27 @@
 <html>
 <body>
 
-<?php
-$name = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = $_POST["name"];
-}
-?>
+<h2>Manage Users</h2>
 
-<h2>Users</h2>
-
-<form method="post" action="">
-  User Name: <input type="text" name="name">
-  <input type="submit" value="Add User">
+<form method="post">
+User Name: <input type="text" name="user">
+<input type="submit" value="Add User">
 </form>
 
 <?php
-if ($name != "") {
-  echo "<h3>User Added:</h3>";
-  echo $name;
+
+if (!empty($_POST["user"])) {
+    echo "User Added: " . $_POST["user"];
 }
 ?>
 
+<br><br>
+<a href="dashboard.php">Back</a>
+
 </body>
 </html>
+
+
+
+
+

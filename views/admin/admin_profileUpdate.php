@@ -1,84 +1,63 @@
-<!DOCTYPE HTML>  
-<html>
-<head>
-<style>
-.error { color: #FF0000; }
-</style>
-</head>
-<body>  
-
 <?php
-// Define variables and set empty values
-$nameErr = $emailErr = $phoneErr = "";
-$name = $email = $phone = "";
+session_start();
+
+// Demo existing data (normally comes from database)
+$name = "Admin Name";
+$email = "admin@email.com";
+$phone = "0123456789";
+$message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-  // Name validation
-  if (empty($_POST["name"])) {
-    $nameErr = "Name is required";
-  } else {
-    $name = test_input($_POST["name"]);
-    if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
-      $nameErr = "Only letters and white space allowed";
-    }
-  }
-
-  // Email validation
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
-    $email = test_input($_POST["email"]);
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Invalid email format";
-    }
-  }
-
-  // Phone validation
-  if (empty($_POST["phone"])) {
-    $phoneErr = "Phone number is required";
-  } else {
-    $phone = test_input($_POST["phone"]);
-  }
-}
-
-// Clean input function
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
+    $name = $_POST["admin_name"];
+    $email = $_POST["admin_email"];
+    $phone = $_POST["admin_phone"];
+    $message = "Profile Updated Successfully";
 }
 ?>
 
-<h2>Admin Profile Update</h2>
-<p><span class="error">* required field</span></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Profile Update</title>
+</head>
+<body>
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+<div class="container">
+    <h2>Admin Profile Update</h2>
 
-  Name: <input type="text" name="name" value="<?php echo $name;?>">
-  <span class="error">* <?php echo $nameErr;?></span>
-  <br><br>
+    <form method="post">
 
-  Email: <input type="text" name="email" value="<?php echo $email;?>">
-  <span class="error">* <?php echo $emailErr;?></span>
-  <br><br>
+        <label>Name:</label><br>
+        <input type="text" name="admin_name" value="<?php echo $name; ?>" required><br><br>
 
-  Phone: <input type="text" name="phone" value="<?php echo $phone;?>">
-  <span class="error">* <?php echo $phoneErr;?></span>
-  <br><br>
+        <label>Email:</label><br>
+        <input type="email" name="admin_email" value="<?php echo $email; ?>" required><br><br>
 
-  <input type="submit" name="submit" value="Update Profile">  
-</form>
+        <label>Phone Number:</label><br>
+        <input type="number" name="admin_phone" value="<?php echo $phone; ?>" required><br><br>
 
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST" && $nameErr=="" && $emailErr=="" && $phoneErr=="") {
-  echo "<h2>Updated Profile:</h2>";
-  echo "Name: " . $name . "<br>";
-  echo "Email: " . $email . "<br>";
-  echo "Phone: " . $phone;
-}
-?>
+        <!-- <label>Date of Birth:</label><br> -->
+        <!-- <input type="date" name="admin_dob" value="<?php echo $dob; ?>" required><br><br> -->
+
+        <!-- <label>Select Gender:</label><br> -->
+        <!-- <input type="radio" name="gender" value="Male" <?php if($gender=="Male") echo "checked"; ?>> Male   -->
+        <!-- <input type="radio" name="gender" value="Female" <?php if($gender=="Female") echo "checked"; ?>> Female -->
+        <br><br>
+
+        <!-- <label>Password:</label><br> -->
+        <!-- <input type="password" name="admin_pass" placeholder="Update Password"><br><br> -->
+
+        <input type="submit" value="Update Profile">
+    </form>
+
+    <p style="color:green;"><?php echo $message; ?></p>
+
+    <p><a href="dashboard.php">Back to Dashboard</a></p>
+</div>
 
 </body>
 </html>
+
+

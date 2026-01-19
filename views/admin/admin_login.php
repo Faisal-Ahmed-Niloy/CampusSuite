@@ -1,34 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
 <?php
 session_start();
+$error = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_POST["username"] == "admin" && $_POST["password"] == "1234") {
+        $_SESSION["admin"] = "admin";
+        header("Location: admin_dashboard.php");
+    } else {
+        $error = "Invalid Username or Password";
+    }
+}
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
-</head>
-<body>
-    <div class="container">
-        <h2>Admin Login Portal</h2>
-        <br>
+<h2>Admin Login</h2>
 
-        <form action="" id="admin_login">
-            <label for="admin_name">Admin Name:</label><br>
-            <input type="text" id="admin_name" required>
-            <br>
+<form method="post">
+Username: <input type="text" name="username"><br><br>
+Password: <input type="password" name="password"><br><br>
+<input type="submit" value="Login">
+</form>
 
-            <label for="admin_pass">Password:</label><br>
-            <input type="password" id="admin_pass" required>
-            <br><br>
+<p style="color:red;"><?php echo $error; ?></p>
 
-            <input type="submit" value="Submit"><br>
-            <p>Don't have an account? <a href="admin_register.php">Register</a></p>
-        </form>
+<a href="admin_forgotPass.php">Forgot Password?</a>
 
-        <p>Go <a href="../../index.php">back</a></p>
-    </div>
 </body>
 </html>
+
 

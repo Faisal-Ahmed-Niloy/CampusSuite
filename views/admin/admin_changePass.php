@@ -1,15 +1,32 @@
-
 <!DOCTYPE HTML>
 <html>
 <body>
 
-<form action="admin_update_password.php" method="post">
-    Admin Email: <input type="text" name="email"><br><br>
-    Old Password: <input type="password" name="old_password"><br><br>
-    New Password: <input type="password" name="new_password"><br><br>
-    <input type="submit" value="Change Password">
+<?php
+$msg = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_POST["old"] == "1234") {
+        $msg = "Password Changed Successfully (Demo)";
+    } else {
+        $msg = "Old Password Incorrect";
+    }
+}
+?>
+
+<h2>Change Password</h2>
+
+<form method="post">
+Old Password: <input type="password" name="old"><br><br>
+New Password: <input type="password" name="new"><br><br>
+<input type="submit" value="Change">
 </form>
+
+<p><?php echo $msg; ?></p>
+
+<a href="dashboard.php">Back</a>
 
 </body>
 </html>
+
+
 
