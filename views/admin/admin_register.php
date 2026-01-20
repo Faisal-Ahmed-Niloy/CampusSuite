@@ -39,6 +39,9 @@ session_start();
             <p>Already have an account? <a href="admin_login.php">Login</a></p>
         </form>
         <p>Go <a href="../../index.php">back</a></p>
+        <p style="margin-top: 20px;">
+        Back to <a href="dashboard.php">Dashboard</a>
+    </p>
     </div>
 
 </body>

@@ -1,34 +1,61 @@
-<!DOCTYPE HTML>
-<html>
+<?php
+session_start();
+if (!isset($_SESSION['admin_name'])) {
+    $_SESSION['admin_name'] = "Admin";  
+}
+
+
+if (!isset($_SESSION['admin_pass'])) {
+    $_SESSION['admin_pass'] = "admin1234";
+}
+
+
+if (isset($_POST['change_pass'])) {
+   
+    
+   
+    $_SESSION['admin_pass'] = $_POST['new-password'] ?? $_SESSION['admin_pass'];
+
+   
+    header("Location: dashboard.php");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin.css">
     <title>Change Password</title>
-    <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 <div class="container">
-    <form method="post" onsubmit="return validateChangePassword()">
+    <form method="post">
         <h2>Change Password</h2>
 
-        <div class="input-group">
-            <label>Old Password</label><br>
-            <input type="password" id="old-password" name="old_password" placeholder="Enter Old Password" required><br>
-        </div>
+        <label for="current-password">Current Password:</label>
+        <input type="password" name="current-password" id="current-password" placeholder="Enter your current password" required>
 
-        <div class="input-group">
-            <label>New Password</label><br>
-            <input type="password" id="new-password" name="new_password" placeholder="Enter New Password" required><br>
-        </div>
+        <label for="new-password">New Password:</label>
+        <input type="password" name="new-password" id="new-password" placeholder="Enter a new password" required>
 
-        <div class="input-group">
-            <label>Confirm Password</label><br>
-            <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm New Password" required><br>
-            <span id="change-pass-error" class="submit-error"></span>
-        </div>
+        <label for="confirm-password">Confirm New Password:</label>
+        <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm your new password" required>
 
-        <input type="submit" value="Change Password"><br>
-        <a href="admin_login.php">Back to Login</a><br>
+       
+        <input type="submit" name="change_pass" value="Change Password">
+
+        <p>Go <a href="dashboard.php">back to dashboard</a></p>
+        <p style="margin-top: 20px;">
+        Back to <a href="admin_register.php">Add Admin</a>
+    </p>
     </form>
 </div>
-<script src="admin.js"></script>
 </body>
 </html>
+
+
+
+
+

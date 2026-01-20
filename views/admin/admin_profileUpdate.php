@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,11 +48,16 @@ session_start();
 
         <input type="submit" value="Update Profile"><br>
 
-        <p>Back to <a href="admin_dashboard.php">Dashboard</a></p>
+        <p>Back to <a href="dashboard.php">Dashboard</a></p>
     </form>
 
     <p>Go <a href="../../index.php">back</a></p>
+    <p style="margin-top: 20px;">
+        Back to <a href="dashboard.php">Dashboard</a>
+    </p>
 </div>
 
 </body>
 </html>
+
+
