@@ -1,0 +1,5 @@
+- [x] Write validation functions for each form (register, login, forgotPass, changePass)
+- [x] Add event listeners for form submissions
+- [x] Implement AJAX for form submissions to respective controllers
+- [x] Handle AJAX responses and display messages
+- [x] Test validations and AJAX functionality (manual testing required in browser)
