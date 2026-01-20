@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>My Courses</title>
-    <link rel="stylesheet" href="teacher.css">
+   <link rel="stylesheet" href="../css/teacher.css">
 </head>
 <body>
 
