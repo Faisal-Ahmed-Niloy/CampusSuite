@@ -10,7 +10,7 @@ session_start();
 </head>
 <body>
 
-	<form action="../controllers/LoginController.php" method="post">
+	<form action="HomeView.php" method="post">
 		<label for="uname">Username</label>
 		<input type="text" name="uname" id="uname" value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ""; ?>">
 		<span>

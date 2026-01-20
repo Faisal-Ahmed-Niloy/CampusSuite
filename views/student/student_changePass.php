@@ -25,5 +25,7 @@ session_start();
         <p>Go <a href="../../index.php">back</a></p>
     </div>
 
+    <script src="../js/student.js"></script>
+
 </body>
 </html>
