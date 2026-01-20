@@ -49,6 +49,8 @@ body {
 }
 
 
+
+
 h2 {
     font-size: 34px;
     text-align: center;
@@ -111,88 +113,281 @@ p a:hover {
 }
 
 
-.dashboard-header {
-    position: fixed;
-    top: 0;
-    left: 0;
+
+/* MAIN DASHBOARD CONTAINER */
+.dashboard-container {
     width: 100%;
+    min-height: 100vh;
+}
 
+/* HEADER */
+.dashboard-header {
     display: flex;
-    /* 👈 important */
     justify-content: space-between;
-    /* left & right */
     align-items: center;
-
-    background-color: #5b86e5;
-    color: white;
-    padding: 15px 20px;
-    margin: 0;
-    z-index: 1000;
+    background-color: #1e3a8a;
+    padding: 20px 40px;
+    color: #ffffff;
 }
 
 .dashboard-title {
-    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
 }
 
-/* Logout button */
+/* LOGOUT BUTTON */
 .logout-button {
-
-    width: 90px;
-    height: 36px;
-    font-size: 14px;
-
-    padding: 8px 14px;
-    background-color: #d9534f;
-    color: #fff;
+    background-color: #ef4444;
+    color: #ffffff;
     border: none;
-    border-radius: 10 px;
-    font-weight: bold;
+    padding: 10px 22px;
+    font-size: 15px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .logout-button:hover {
-    background-color: #c9302c;
+    background-color: #dc2626;
 }
 
+/* DASHBOARD CONTENT */
+.dashboard-content {
+    display: flex;
+}
+
+/* SIDEBAR */
 .sidebar {
-    position: fixed;
-    top: 60px;
-    /* below header */
-    left: 0;
-    width: 220px;
-    height: calc(100vh - 60px);
-
-    padding: 20px;
-
-    background-color: #d2cccc;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    background-color: #ffffff;
+    min-height: calc(100vh - 80px);
+    padding: 25px;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.08);
 }
 
 .sidebar ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .sidebar ul li {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
+/* SIDEBAR LINKS */
 .sidebar ul li a {
+    display: block;
     text-decoration: none;
-    color: #1c1c1d;
-    font-weight: bold;
+    color: #1f2937;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: 0.3s;
 }
 
 .sidebar ul li a:hover {
-    background-color: #34508e;
-    color: #141516;
+    background-color: #1e3a8a;
+    color: #b7aeae;
 }
 
-/* -------------------- Main Content -------------------- */
-.dashboard-content {
-    margin-left: 220px;
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
 
-    padding: 100px 20px 20px 20px;
+    .dashboard-content {
+        flex-direction: column;
+    }
 
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+    }
+}
+
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    background-color: #f9fafb;
+}
+
+.main-content h2 {
+    margin-bottom: 25px;
+    color: #1e3a8a;
+}
+
+/* FORM */
+.main-content form {
+    max-width: 400px;
+    background: #ddd0d0;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.main-content label {
+    font-weight: bold;
+}
+
+.main-content input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.main-content button {
+    background-color: #1e3a8a;
+    color: #b8a4a4;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.main-content button:hover {
+    background-color: #162f6a;
+}
+
+/* SUCCESS MESSAGE */
+.success-msg {
+    margin-top: 15px;
+    color: green;
+    font-weight: bold;
+}
+
+.card textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #f3eaea;
+    font-size: 15px;
+    resize: none;
+    outline: none;
+}
+
+.card textarea:focus {
+    background-color: #ede9fe;
+}
+
+
+.sidebar ul li a.active {
+    background-color: #1e3a8a;
+    color: #ffffff;
+}
+
+
+.form-boxgivenotice {
+    height: auto;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-boxgivemarks {
+    height: auto;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* COURSES GRID */
+.courses-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* COURSE CARD */
+.course-card {
+    background: #d5d1d1;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-6px);
+}
+
+/* COURSE TITLE */
+.course-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #1e3a8a;
+}
+
+/* COURSE DESCRIPTION */
+.course-card p {
+    font-size: 14px;
+    color: #4b5563;
+    margin-bottom: 18px;
+}
+
+/* COURSE BUTTON */
+.course-card a {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #5b84e6;
+    color: #ffffff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.course-card a:hover {
+    background-color: #4f46e5;
+}
+
+
+#addStudentForm {
+    margin-bottom: 20px;
+}
+
+#addStudentForm input {
+    padding: 8px;
+    margin-right: 5px;
+}
+
+#addStudentForm button {
+    padding: 8px 12px;
+    background: #2e86de;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.student-table th,
+.student-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+
+
+.error {
+    color: red;
+    font-size: 14px;
 }

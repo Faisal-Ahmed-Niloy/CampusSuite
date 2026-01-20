@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +5,6 @@
     <title>My Courses</title>
     <link rel="stylesheet" href="teacher.css">
 </head>
-
 <body>
 
 <div class="dashboard-container">
@@ -34,33 +31,41 @@
                 <li><a href="teacher_notice.php">Give Notice</a></li><br>
                 <li><a href="teacher_changePass.php">Change Password</a></li>
             </ul>
-        
         </div>
 
-        
+    
         <div class="main-content">
-            <h2>My Courses</h2>
+            <h2>Software Engineering</h2>
 
-            <div class="courses-container">
+            
+            <h3>Add Student</h3>
+            <form id="addStudentForm">
+                <input type="text" id="studentId" placeholder="Student ID" required>
+                <input type="text" id="studentName" placeholder="Student Name" required>
+                <input type="email" id="studentEmail" placeholder="Email" required>
+                <button type="submit">Add Student</button>
+            </form>
 
-                <div class="course-card">
-                    <h3>Web Development</h3>
-                    <p>HTML, CSS, JavaScript, PHP</p>
-                    <a href="teachercourse1.php">View Course</a>
-                </div>
-
-                
-                <div class="course-card">
-                    <h3>Software Engineering</h3>
-                    <p>SDLC, UML, Agile Methods</p>
-                    <a href="teachercourse2.php">View Course</a>
-                </div>
-
-            </div>
+            
+            <h3>Student List</h3>
+           <table class="student-table" id="studentTable">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Email</th>
+            
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
         </div>
 
     </div>
 </div>
+
+</div>
+<script src="teacher.js"></script>
 
 </body>
 </html>

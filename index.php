@@ -34,5 +34,10 @@ session_start();
     <a href="views/admin/courses.php">Admin Courses</a><br>
     <a href="views/admin/assign_teacher.php">Assign Teacher</a><br>
 
+    <p><b>Teacher Section</b></p>
+    <a href="views/teacher/teacher_login.php">Teacher login</a>
+    <a href="views/teacher/teacher_register.php">Teacher Register</a>
+    <a href="views/teacher/dashboard.php">Teacher Dashboard</a>
+    <a href="views/teacher/my_courses.php">Teacher courses</a>
 </body>
 </html>

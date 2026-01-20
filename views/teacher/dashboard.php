@@ -13,18 +13,22 @@
 <div class="dashboard-container">
             <div class="dashboard-header">
     <h1 class="dashboard-title">Teacher's Dashboard</h1>
-    <button class="logout-button">Logout</button>
+
+    <a href="teacherlogin.php" class="logout-button" onclick="return confirm('Are you sure you want to logout?');">
+    Logout
+</a>
+
+    
             </div>
     
     <div class="dashboard-content">
         <div class="sidebar">
             <ul>
-                <li><a href="#">Home</a></li><br>
-                <li><a href="#">My Courses</a></li><br>
-                <li><a href="#">Add Courses</a></li><br>
-                <li><a href="#">Grades</a></li><br>
-                <li><a href="#">Give Notice</a></li><br>
-                <li><a href="#">Update Profile</a></li><br>
+                <li><a href="my_courses.php" >My Courses</a></li><br>
+                <li><a href="teacher_givemarks.php">Give Marks</a></li><br>
+                
+              
+                <li><a href="teacher_notice.php"class="active">Give Notice</a></li><br>
                 <li><a href="teacher_changePass.php">Change Password</a></li>
             </ul>
         </div>
