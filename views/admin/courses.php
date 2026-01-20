@@ -35,7 +35,7 @@ if (!isset($_SESSION['admin_name'])) {
         Back to <a href="dashboard.php">Dashboard</a>
     </p>
 </div>
-
+<script src="admin.js"></script>
 </body>
 </html>
 

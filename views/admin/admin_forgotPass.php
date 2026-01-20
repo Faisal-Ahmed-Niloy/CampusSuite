@@ -20,6 +20,7 @@ session_start();
             <p>Go <a href="admin_login.php">back</a></p>
         </form>
     </div>
+    <script src="admin.js"></script>
 </body>
 </html>
 

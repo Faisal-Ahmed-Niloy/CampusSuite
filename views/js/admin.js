@@ -1,122 +1,218 @@
-function validateLogin() {
-    let username = document.getElementById('username');
-    let password = document.getElementById('password');
-    let valid = true;
+function isEmpty(value) {
+    return value.trim() === "";
+}
 
-    if(username && username.value.trim() === "") {
-        alert("Enter username");
-        valid = false;
-    }
-    if(password && password.value.trim() === "") {
-        alert("Enter password");
-        valid = false;
+
+function isValidEmail(email) {
+    let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return pattern.test(email);
+}
+
+
+function minLength(value, length) {
+    return value.trim().length >= length;
+}
+
+
+function showError(elementId, message) {
+    let errorElem = document.getElementById(elementId);
+    if (errorElem) errorElem.innerHTML = message;
+}
+
+
+function validateAdminLogin() {
+    let username = document.getElementById("admin-username").value;
+    let password = document.getElementById("admin-password").value;
+    let errorId = "login-error";
+
+    showError(errorId, "");
+
+    if (isEmpty(username)) {
+        showError(errorId, "Username cannot be empty");
+        return false;
     }
 
-    return valid;
+    if (!minLength(username, 5)) {
+        showError(errorId, "Username must be at least 5 characters long");
+        return false;
+    }
+
+    if (isEmpty(password)) {
+        showError(errorId, "Password cannot be empty");
+        return false;
+    }
+
+    if (!minLength(password, 8)) {
+        showError(errorId, "Password must be at least 8 characters long");
+        return false;
+    }
+
+    return true;
+}
+
+
+function validateAdminLogout() {
+    return confirm("Are you sure you want to logout?");
+}
+
+
+function validateAdminForgotPass() {
+    let email = document.getElementById("admin-email").value;
+    let errorId = "forgot-error";
+
+    showError(errorId, "");
+
+    if (isEmpty(email)) {
+        showError(errorId, "Email cannot be empty");
+        return false;
+    }
+
+    if (!isValidEmail(email)) {
+        showError(errorId, "Enter a valid email address");
+        return false;
+    }
+
+    return true;
+}
+
+
+function validateAdminChangePass() {
+    let currentPass = document.getElementById("current-password").value;
+    let newPass = document.getElementById("new-password").value;
+    let confirmPass = document.getElementById("confirm-password").value;
+    let errorId = "change-error";
+
+    showError(errorId, "");
+
+    if (isEmpty(currentPass)) {
+        showError(errorId, "Current password cannot be empty");
+        return false;
+    }
+
+    if (isEmpty(newPass)) {
+        showError(errorId, "New password cannot be empty");
+        return false;
+    }
+
+    if (!minLength(newPass, 8)) {
+        showError(errorId, "New password must be at least 8 characters long");
+        return false;
+    }
+
+    if (newPass !== confirmPass) {
+        showError(errorId, "Passwords do not match");
+        return false;
+    }
+
+    return true;
+}
+
+
+function validateDashboardForm() {
+    let title = document.getElementById("dashboard-title").value;
+    let description = document.getElementById("dashboard-description").value;
+    let errorId = "dashboard-error";
+
+    showError(errorId, "");
+
+    if (isEmpty(title)) {
+        showError(errorId, "Title cannot be empty");
+        return false;
+    }
+
+    if (isEmpty(description)) {
+        showError(errorId, "Description cannot be empty");
+        return false;
+    }
+
+    return true;
 }
 
 
 function validateUserForm() {
-    let user = document.getElementById('user');
-    if(user.value.trim() === "") {
-        document.getElementById('user-error').innerText = "Enter user name";
-        user.classList.add('error');
+    let username = document.getElementById("user-username").value;
+    let email = document.getElementById("user-email").value;
+    let errorId = "user-error";
+
+    showError(errorId, "");
+
+    if (isEmpty(username)) {
+        showError(errorId, "Username cannot be empty");
         return false;
-    } else {
-        document.getElementById('user-error').innerHTML = '<i class="fa-solid fa-circle-check"></i>';
-        user.classList.remove('error');
-        user.classList.add('valid');
-        return true;
     }
-}
 
-
-function validateAddCourse() {
-    let course = document.getElementById('course');
-    if(course.value.trim() === "") {
-        document.getElementById('course-error').innerText = "Enter course name";
-        course.classList.add('error');
+    if (!minLength(username, 3)) {
+        showError(errorId, "Username must be at least 3 characters long");
         return false;
-    } else {
-        document.getElementById('course-error').innerHTML = '<i class="fa-solid fa-circle-check"></i>';
-        course.classList.remove('error');
-        course.classList.add('valid');
-        return true;
     }
+
+    if (isEmpty(email)) {
+        showError(errorId, "Email cannot be empty");
+        return false;
+    }
+
+    if (!isValidEmail(email)) {
+        showError(errorId, "Enter a valid email address");
+        return false;
+    }
+
+    return true;
 }
 
 
-function validateAssignTeacherForm() {
-    let teacher = document.getElementById('teacher');
-    let assign_course = document.getElementById('assign_course');
-    let valid = true;
+function validateCourseForm() {
+    let courseName = document.getElementById("course-name").value;
+    let courseDesc = document.getElementById("course-description").value;
+    let errorId = "course-error";
 
-    if(teacher.value.trim() === "") {
-        document.getElementById('teacher-error').innerText = "Enter teacher name";
-        teacher.classList.add('error');
-        valid = false;
-    } else {
-        document.getElementById('teacher-error').innerHTML = '<i class="fa-solid fa-circle-check"></i>';
-        teacher.classList.remove('error');
-        teacher.classList.add('valid');
+    showError(errorId, "");
+
+    if (isEmpty(courseName)) {
+        showError(errorId, "Course name cannot be empty");
+        return false;
     }
 
-    if(assign_course.value.trim() === "") {
-        document.getElementById('assign-course-error').innerText = "Enter course name";
-        assign_course.classList.add('error');
-        valid = false;
-    } else {
-        document.getElementById('assign-course-error').innerHTML = '<i class="fa-solid fa-circle-check"></i>';
-        assign_course.classList.remove('error');
-        assign_course.classList.add('valid');
+    if (!minLength(courseName, 3)) {
+        showError(errorId, "Course name must be at least 3 characters long");
+        return false;
     }
 
-    return valid;
+    if (isEmpty(courseDesc)) {
+        showError(errorId, "Course description cannot be empty");
+        return false;
+    }
+
+    return true;
 }
 
 
-function validateProfileUpdate() {
-    let name = document.getElementById('profile-name');
-    let email = document.getElementById('profile-email');
-    let phone = document.getElementById('profile-phone');
-    let valid = true;
+function validateAdminProfileUpdate() {
+    let name = document.getElementById("admin-name").value;
+    let email = document.getElementById("admin-email").value;
+    let phone = document.getElementById("admin-phone").value;
+    let errorId = "profile-error";
 
-    if(name.value.trim() === "") {
-        document.getElementById('profile-name-error').innerText = "Enter name";
-        name.classList.add('error');
-        valid = false;
-    } else {
-        document.getElementById('profile-name-error').innerHTML = '<i class="fa-solid fa-circle-check"></i>';
-        name.classList.remove('error');
-        name.classList.add('valid');
+    showError(errorId, "");
+
+    if (isEmpty(name)) {
+        showError(errorId, "Name cannot be empty");
+        return false;
     }
 
-    if(email.value.trim() === "" || !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email.value)) {
-        document.getElementById('profile-email-error').innerText = "Enter valid email";
-        email.classList.add('error');
-        valid = false;
-    } else {
-        document.getElementById('profile-email-error').innerHTML = '<i class="fa-solid fa-circle-check"></i>';
-        email.classList.remove('error');
-        email.classList.add('valid');
+    if (isEmpty(email)) {
+        showError(errorId, "Email cannot be empty");
+        return false;
     }
 
-    if(phone.value.trim() === "" || !/^[0-9]{10}$/.test(phone.value)) {
-        document.getElementById('profile-phone-error').innerText = "Enter valid 10-digit phone";
-        phone.classList.add('error');
-        valid = false;
-    } else {
-        document.getElementById('profile-phone-error').innerHTML = '<i class="fa-solid fa-circle-check"></i>';
-        phone.classList.remove('error');
-        phone.classList.add('valid');
+    if (!isValidEmail(email)) {
+        showError(errorId, "Enter a valid email address");
+        return false;
     }
 
-    return valid;
-}
-
-
-function adminLogout() {
-    if(confirm("Are you sure you want to logout?")) {
-        window.location.href = "admin_logout.php?action=logout";
+    if (!isEmpty(phone) && !/^\d{10}$/.test(phone)) {
+        showError(errorId, "Enter a valid 10-digit phone number");
+        return false;
     }
+
+    return true;
 }

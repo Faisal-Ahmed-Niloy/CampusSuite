@@ -59,6 +59,6 @@ if (!isset($_SESSION['admin_name'])) {
 
     <p style="margin-top: 20px;">Go <a href="../../index.php">back to home</a></p>
 </div>
-
+<script src="admin.js"></script>
 </body>
 </html>

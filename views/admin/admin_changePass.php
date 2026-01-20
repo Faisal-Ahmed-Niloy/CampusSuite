@@ -52,6 +52,7 @@ if (isset($_POST['change_pass'])) {
     </p>
     </form>
 </div>
+<script src="admin.js"></script>
 </body>
 </html>
 
