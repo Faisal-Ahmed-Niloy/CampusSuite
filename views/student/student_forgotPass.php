@@ -11,6 +11,7 @@ session_start();
     <title>Password Reset</title>
 </head>
 <body>
+    <?php include_once "../header.php" ?>
     <div class="container">
         <form action="" id="forgot_pass">
             <h2>Reset your password</h2>
@@ -22,6 +23,6 @@ session_start();
     </div>
 
     <script src="../js/student.js"></script>
-
+    <?php include_once "../footer.php" ?>
 </body>
 </html>

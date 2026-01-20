@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['isLoggedIn'])) {
+	header("Location: student_login.php");
+	exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +15,7 @@ session_start();
     <title>Change Password</title>
 </head>
 <body>
-    
+    <?php include_once "../header.php" ?>
     <div class="container">
         <form action="" id="update_pass">
             <h2>Update Password</h2>
@@ -26,6 +30,6 @@ session_start();
     </div>
 
     <script src="../js/student.js"></script>
-
+    <?php include_once "../footer.php" ?>
 </body>
 </html>

@@ -11,19 +11,22 @@
     <title>Student Login</title>
 </head>
 <body>
+    <?php include_once "../header.php" ?>
+
     <div class="container">
         <h2>Student Login Portal</h2>
         <br>
         <form action="../../controllers/StudentController.php"  id="student_login" method="post">
-            <label for="name">User Name:</label><br>
-            <input type="text" id="student_name" value="<?php echo isset($_SESSION['student_username']) ? $_SESSION['student_username'] : ""; ?>" required>
+            <label for="name">User Name:</label>
+            <input type="text" id="student_name" name="student_name" value="<?php echo isset($_SESSION['student_username']) ? $_SESSION['student_username'] : ""; ?>" required>
+            <br>
             <span>
 			<?php if (isset($_SESSION['student_usernameErrMsg'])) { echo $_SESSION['student_usernameErrMsg']; unset($_SESSION['student_usernameErrMsg']); } ?>
 		    </span>
             
             <br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="student_pass" required>
+            <label for="password">Password:</label>
+            <input type="password" id="student_pass" name="student_pass" required>
             <span>
 			<?php if (isset($_SESSION['student_passwordErrMsg'])) { echo $_SESSION['student_passwordErrMsg']; unset($_SESSION['student_passwordErrMsg']); } ?>
 		    </span>
@@ -38,6 +41,6 @@
     </div>
 
     <script src="../js/student.js"></script>
-
+    <?php include_once "../footer.php" ?>
 </body>
 </html>
