@@ -1,34 +1,30 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Admin Logout</title>
-    <link rel="stylesheet" href="admin.css">
-</head>
-<body>
 <?php
 session_start();
-
-
-if (isset($_GET['action']) && $_GET['action'] === 'logout') {
-    session_unset();
-    session_destroy();
-    header("Location: admin_login.php");
-    exit;
-}
+session_destroy(); 
 ?>
 
-<div class="container">
-    <form>
-        <h2 style="text-align:center; margin-bottom:20px;">Logout</h2>
-        <p style="text-align:center; font-size:16px;">Are you sure you want to logout?</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
 
-        <div style="text-align:center; margin-top:30px;">
-            <button type="button" onclick="adminLogout()">Yes, Logout</button>
-            <a href="admin_dashboard.php" style="margin-left:20px; color:#2d8cf0; text-decoration: none;">Cancel</a>
-        </div>
+<div class="container">
+    <h2>You have been logged out 👋</h2>
+    <p>You successfully logged out from the admin panel.</p>
+
+    
+    <form action="admin_login.php" method="get">
+        <input type="submit" value="Go to Login Page">
     </form>
+
+    <p style="margin-top: 20px;">Go <a href="../../index.php">back to home</a></p>
 </div>
 
-<script src="admin.js"></script>
 </body>
 </html>
+

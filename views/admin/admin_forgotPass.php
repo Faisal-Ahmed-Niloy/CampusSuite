@@ -1,24 +1,25 @@
-<!DOCTYPE HTML>
-<html>
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Forgot Password</title>
-    <link rel="stylesheet" href="admin.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin.css">
+    <title>Password Reset</title>
 </head>
 <body>
-<div class="container">
-    <form method="post" onsubmit="return validateForgotPassword()">
-        <h2>Forgot Password</h2>
-
-        <div class="input-group">
-            <label>Email</label><br>
-            <input type="email" id="forgot-email" name="email" placeholder="Enter Email" required><br>
-            <span id="forgot-error" class="submit-error"></span>
-         </div>
-        <input type="submit" value="Send Reset Link"><br>
-        <a href="admin_login.php">Back to Login</a><br>
-    </form>
-</div>
-<script src="admin.js"></script>
+    <div class="container">
+        <form action="">
+            <h2>Reset your password</h2>
+            <label for="reset_pass">Enter your E-mail for password reset link:</label>
+            <input type="email" name="reset_email" id="reset_email" placeholder="Enter your account's email address">
+            <input type="submit" value="submit">
+            <p>Go <a href="admin_login.php">back</a></p>
+        </form>
+    </div>
 </body>
 </html>
 

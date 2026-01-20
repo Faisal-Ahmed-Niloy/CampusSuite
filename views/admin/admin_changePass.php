@@ -25,7 +25,8 @@
             <span id="change-pass-error" class="submit-error"></span>
         </div>
 
-        <input type="submit" value="Change Password">
+        <input type="submit" value="Change Password"><br>
+        <a href="admin_login.php">Back to Login</a><br>
     </form>
 </div>
 <script src="admin.js"></script>
