@@ -46,6 +46,27 @@ footer {
     z-index: 1000;
 }
 
+/* body > h3 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: rgb(221, 231, 239);
+} */
+
+/* h2{
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: rgb(221, 231, 239); 
+} */
+
+/* .box h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: rgb(221, 231, 239);
+} */
+
 .container {
     /* display: flex; */
     justify-content: center;
